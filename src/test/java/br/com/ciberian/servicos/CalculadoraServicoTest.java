@@ -15,7 +15,7 @@ public class CalculadoraServicoTest {
 	}
 
 	@Test
-	public void deveCalcularImc() throws Exception {
+	public void deveCalcularImc() {
 		// Ação
 		double imc = servico.calcularImc(79.0, 1.76);
 
@@ -43,7 +43,7 @@ public class CalculadoraServicoTest {
 	}
 
 	@Test
-	public void deveClassificarAbaixoPeso() throws Exception {
+	public void deveClassificarAbaixoPeso() {
 		// Cenario
 		double imc = servico.calcularImc(57, 1.76);
 
@@ -55,7 +55,7 @@ public class CalculadoraServicoTest {
 	}
 
 	@Test
-	public void deveClassificarPesoIdeal() throws Exception {
+	public void deveClassificarPesoIdeal() {
 		// Cenario
 		double imc = servico.calcularImc(65, 1.76);
 
@@ -67,7 +67,7 @@ public class CalculadoraServicoTest {
 	}
 
 	@Test
-	public void deveClassificarAcimaPeso() throws Exception {
+	public void deveClassificarAcimaPeso() {
 		// Cenario
 		double imc = servico.calcularImc(92.9, 1.76);
 
@@ -79,7 +79,7 @@ public class CalculadoraServicoTest {
 	}
 
 	@Test
-	public void naoDeveClassificarAcimaPeso() throws Exception {
+	public void naoDeveClassificarAcimaPeso() {
 		// Cenario
 		double imc = servico.calcularImc(93, 1.76);
 
@@ -91,7 +91,7 @@ public class CalculadoraServicoTest {
 	}
 
 	@Test
-	public void deveClassificarObesidade1() throws Exception {
+	public void deveClassificarObesidade1() {
 		// Cenario
 		double imc = servico.calcularImc(93, 1.76);
 
@@ -103,7 +103,7 @@ public class CalculadoraServicoTest {
 	}
 
 	@Test
-	public void deveClassificarObesidade2() throws Exception {
+	public void deveClassificarObesidade2() {
 		// Cenario
 		double imc = servico.calcularImc(110, 1.76);
 
@@ -115,7 +115,7 @@ public class CalculadoraServicoTest {
 	}
 
 	@Test
-	public void deveClassificarObesidadeSevera() throws Exception {
+	public void deveClassificarObesidadeSevera() {
 		// Cenario
 		double imc = servico.calcularImc(130, 1.76);
 
@@ -128,7 +128,7 @@ public class CalculadoraServicoTest {
 
 	@ParameterizedTest(name = "Altura {0}, Peso {1}, Situação {2}")
 	@CsvFileSource(resources = "/imc.csv", delimiter = ';')
-	public void deveClassificarImcs(double alturas, double pesos, String mensagens) throws Exception {
+	public void deveClassificarImcs(double alturas, double pesos, String mensagens) {
 		// Cenario
 		double imc = servico.calcularImc(pesos, alturas);
 
